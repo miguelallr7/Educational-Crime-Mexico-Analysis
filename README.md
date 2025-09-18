@@ -21,4 +21,44 @@ This case study analyzes the relationship between education, socioeconomic indic
 * Crime Rate (SQL Table) - Observatorio Nacional Ciudadano 
 * Political Party (SQL Table) - Wikipedia 
 
+# Tables Content
+
+
+## 📄 Table: `crime_rate_long_format_unpivot`
+
+| Column       | Type   | Description                          |
+|--------------|--------|--------------------------------------|
+| `entity`     | STRING | Name of the federal entity (state)   |
+| `year`       | INT    | Year of the recorded crime rate      |
+| `crime_rate` | FLOAT  | Crime rate per 100,000 inhabitants   |
+
+---
+
+## 📄 Table: `political_party_long_format_unpivot`
+
+| Column            | Type   | Description                            |
+|-------------------|--------|----------------------------------------|
+| `entity`          | STRING | Name of the federal entity (state)     |
+| `year`            | INT    | Year of the political party record     |
+| `political_party` | STRING | Political party in power that year     |
+
+---
+
+## 📄 Table: `poverty_rate_long_format_unpivot`
+
+| Column         | Type   | Description                                         |
+|----------------|--------|-----------------------------------------------------|
+| `entity`       | STRING | Name of the federal entity (state)                  |
+| `year`         | INT    | Year of the poverty rate record                     |
+| `poverty_rate` | FLOAT  | Percentage of inhabitants living in poverty         |
+
+---
+
+## 📄 Table: `unemployment_rate_long_format_unpivot`
+
+| Column               | Type   | Description                                      |
+|----------------------|--------|--------------------------------------------------|
+| `entity`             | STRING | Name of the federal entity (state)               |
+| `year`               | INT    | Year of the unemployment rate record             |
+| `unemployment_rate`  | FLOAT  | Percentage of unemployed inhabitants             |
 
