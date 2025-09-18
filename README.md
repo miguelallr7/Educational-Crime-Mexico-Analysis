@@ -19,9 +19,34 @@ This case study analyzes the relationship between education, socioeconomic indic
 * Unemployment Rate (SQL Table) - SNIEG Sistema Nacional de Informacion Estadistica y Geografica
 * Poverty Rate (SQL Table) - INEGI 
 * Crime Rate (SQL Table) - Observatorio Nacional Ciudadano 
-* Political Party (SQL Table) - Wikipedia 
+* Political Party (SQL Table) - Wikipedia
 
-# Tables Content
+## Data Cleaning & Transformation Process
+
+All original datasets were initially in wide format, with multiple columns representing different years or categories. These were transformed into long format to facilitate time-series analysis and easier joins across datasets.
+
+### Cleaning Steps
+
+* Removed null or inconsistent values.
+* Standardized entity names across all datasets.
+* Ensured consistent data types for joins (entity, year).
+* Normalized percentage values.
+
+Example: To prepare the crime rate dataset for time-series analysis and visualization, I transformed it from a wide format (multiple year columns) to a long format (one row per year per entity). This was done using BigQuery's UNPIVOT operation:  
+
+SELECT  
+  federal_entity AS entity,
+  REPLACE(year, 'year_', '') AS year,
+  crime_rate
+FROM `project-mexico-analysis.crime_rate.crime_rate_states_2015_2025` 
+UNPIVOT (
+  crime_rate FOR year IN (
+    year_2015, year_2016, year_2017, year_2018, year_2019, year_2020,
+    year_2021, year_2022, year_2023, year_2024, year_2025
+  )
+)
+
+## Tables Content
 
 
 ## 📄 Table: `crime_rate_long_format_unpivot`
