@@ -16,9 +16,9 @@ This case study analyzes the relationship between education, socioeconomic indic
 
 ## Data Sources
 
-* Unemployment Rate (SQL Table)
-* Poverty Rate (SQL Table) - Observatorio Nacional Ciudadano 
-* Crime Rate (SQL Table) 
-* Political Party (SQL Table
+* Unemployment Rate (SQL Table) - SNIEG Sistema Nacional de Informacion Estadistica y Geografica
+* Poverty Rate (SQL Table) - INEGI 
+* Crime Rate (SQL Table) - Observatorio Nacional Ciudadano 
+* Political Party (SQL Table) - Wikipedia 
 
 
