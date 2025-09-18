@@ -1,6 +1,6 @@
 # Educational-Crime-Mexico-Analysis
 
-This repository contains data on educational attainment across Mexico's 32 states, crime statistics, economic indicators, and information about the political parties currently governing each state
+This repository contains data on educational attainment across Mexico's 32 federal entities, crime statistics, economic indicators, and information about the political parties currently governing each state
 
 ## Project Overview 
 
@@ -92,4 +92,73 @@ UNPIVOT (
 | `entity`             | STRING | Name of the federal entity (state)               |
 | `year`               | INT    | Year of the unemployment rate record             |
 | `unemployment_rate`  | FLOAT  | Percentage of unemployed inhabitants             |
+
+
+## Homologated Entity Names for Analysis
+
+To ensure consistency across datasets, all entity names were standardized by removing trailing spaces and converting them to lowercase. A new reference table was created to facilitate joins with other datasets.
+
+```sql
+CREATE OR REPLACE TABLE `project-mexico-analysis.unpivoted_dataset_states.clean_entities` AS
+SELECT entity
+FROM (
+  SELECT TRIM(LOWER(entity)) AS entity FROM `project-mexico-analysis.unpivoted_dataset_states.crime_rate_unpivoted`
+  UNION DISTINCT
+  SELECT TRIM(LOWER(entity)) FROM `project-mexico-analysis.unpivoted_dataset_states.political_party_unpivoted`
+  UNION DISTINCT
+  SELECT TRIM(LOWER(entity)) FROM `project-mexico-analysis.unpivoted_dataset_states.poverty_rate_unpivoted`
+  UNION DISTINCT
+  SELECT TRIM(LOWER(federal_entity)) FROM `project-mexico-analysis.unpivoted_dataset_states.unemployment_rate_unpivoted`
+)
+ORDER BY entity;
+```
+
+## Joined Table With The 4 Tables
+
+A new table named joined_states_information was created to consolidate data from the four main sources for further analysis. The resulting table includes:
+
+* entity
+* year
+* crime_rate
+* political_party
+* poverty_rate
+* unemployment_rate
+
+```sql
+CREATE OR REPLACE TABLE `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
+AS
+
+WITH clean_entities AS (
+  SELECT TRIM(LOWER(entity)) AS entity
+  FROM `project-mexico-analysis.unpivoted_dataset_states.clean_entities`
+),
+
+crime AS (
+  SELECT TRIM(LOWER(entity)) AS entity, year, crime_rate
+  FROM `project-mexico-analysis.unpivoted_dataset_states.crime_rate_unpivoted`
+),
+
+party AS (
+  SELECT TRIM(LOWER(entity)) AS entity, year, political_party
+  FROM `project-mexico-analysis.unpivoted_dataset_states.political_party_unpivoted`
+),
+
+poverty AS (
+  SELECT TRIM(LOWER(entity)) AS entity, year, poverty_rate
+  FROM `project-mexico-analysis.unpivoted_dataset_states.poverty_rate_unpivoted`
+)
+
+SELECT
+  ce.entity,
+  crime.year,
+  crime.crime_rate,
+  party.political_party,
+  poverty.poverty_rate
+FROM clean_entities ce
+LEFT JOIN crime ON ce.entity = crime.entity
+LEFT JOIN party ON ce.entity = party.entity AND crime.year = party.year
+LEFT JOIN poverty ON ce.entity = poverty.entity AND crime.year = poverty.year
+ORDER BY ce.entity, crime.year;
+```
+
 
