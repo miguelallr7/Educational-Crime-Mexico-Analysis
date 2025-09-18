@@ -34,18 +34,24 @@ All original datasets were initially in wide format, with multiple columns repre
 
 Example: To prepare the crime rate dataset for time-series analysis and visualization, I transformed it from a wide format (multiple year columns) to a long format (one row per year per entity). This was done using BigQuery's UNPIVOT operation:  
 
-SELECT  
+```sql
+-- Unpivot crime rate data from wide to long format for time series analysis
+-- Source table: project-mexico-analysis.crime_rate.crime_rate_states_2015_2025
+-- Output columns: entity, year, crime_rate
+
+CREATE OR REPLACE TABLE `project-mexico-analysis.unpivoted_dataset_states.crime_rate_unpivoted` AS
+SELECT
   federal_entity AS entity,
   REPLACE(year, 'year_', '') AS year,
   crime_rate
-FROM `project-mexico-analysis.crime_rate.crime_rate_states_2015_2025` 
+FROM `project-mexico-analysis.crime_rate.crime_rate_states_2015_2025`
 UNPIVOT (
   crime_rate FOR year IN (
     year_2015, year_2016, year_2017, year_2018, year_2019, year_2020,
     year_2021, year_2022, year_2023, year_2024, year_2025
   )
 )
-
+```
 ## Tables Content
 
 
