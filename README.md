@@ -125,11 +125,9 @@ A new table named joined_states_information was created to consolidate data from
 * unemployment_rate
 
 ```sql
-CREATE OR REPLACE TABLE `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
-AS
-
-WITH clean_entities AS (
-  SELECT TRIM(LOWER(entity)) AS entity
+WITH
+clean_entities AS (
+  SELECT DISTINCT TRIM(LOWER(entity)) AS entity
   FROM `project-mexico-analysis.unpivoted_dataset_states.clean_entities`
 ),
 
@@ -146,19 +144,29 @@ party AS (
 poverty AS (
   SELECT TRIM(LOWER(entity)) AS entity, year, poverty_rate
   FROM `project-mexico-analysis.unpivoted_dataset_states.poverty_rate_unpivoted`
+),
+
+unemployment AS (
+  SELECT TRIM(LOWER(entity)) AS entity, year, unemployment_rate
+  FROM `project-mexico-analysis.unpivoted_dataset_states.unemployment_rate_unpivoted`
 )
 
 SELECT
-  ce.entity,
-  crime.year,
-  crime.crime_rate,
-  party.political_party,
-  poverty.poverty_rate
+  ce.entity AS entity,
+  cr.year,
+  cr.crime_rate,
+  pt.political_party,
+  pv.poverty_rate,
+  un.unemployment_rate
+
 FROM clean_entities ce
-LEFT JOIN crime ON ce.entity = crime.entity
-LEFT JOIN party ON ce.entity = party.entity AND crime.year = party.year
-LEFT JOIN poverty ON ce.entity = poverty.entity AND crime.year = poverty.year
-ORDER BY ce.entity, crime.year;
+LEFT JOIN crime cr ON ce.entity = cr.entity
+LEFT JOIN party pt ON ce.entity = pt.entity AND cr.year = pt.year
+LEFT JOIN poverty pv ON ce.entity = pv.entity AND cr.year = pv.year
+LEFT JOIN unemployment un ON ce.entity = un.entity AND cr.year = un.year
+
+ORDER BY ce.entity, cr.year;
+
 ```
 
 
