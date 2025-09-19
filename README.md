@@ -244,4 +244,116 @@ FROM
 | -0.36467106377769876      |
 
 
-Based on the analysis of state-level data in Mexico, we found a moderate negative correlation between poverty rate and crime rate (–0.36). This suggests that, contrary to common assumptions, states with higher poverty levels tend to report slightly lower crime rates. Possible explanations include underreporting in marginalized areas, rural vs. urban dynamics, and the influence of political or institutional factors. Further investigation is recommended to explore these patterns in more detail
+Based on the analysis of state-level data in Mexico, we found a moderate negative correlation between poverty rate and crime rate (–0.36). This suggests that, contrary to common assumptions, states with higher poverty levels tend to report slightly lower crime rates. Possible explanations include underreporting in marginalized areas, rural vs. urban dynamics, and the influence of political or institutional factors. 
+
+## Most Violent States in 2025, Correlation With Political Party
+
+A comparative analysis was conducted on the five most violent states in Mexico, along with the national average (República Mexicana), focusing on crime rates in 2015, 2020, and 2025. Each state's ruling political party during those years was also examined to explore potential correlations between governing policies and crime trends.
+
+```sql
+-- Step 1: Get the top 5 most violent states based on average crime rate
+WITH top_violent_states AS (
+  SELECT 
+    entity,
+    AVG(crime_rate) AS avg_crime_rate
+  FROM 
+    `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
+  WHERE 
+    entity != 'republica mexicana'  -- Exclude national aggregate
+  GROUP BY 
+    entity
+  ORDER BY 
+    avg_crime_rate DESC
+  LIMIT 5
+),
+
+-- Step 2: Get crime rates and political parties for República Mexicana for selected years
+republica_mexicana AS (
+  SELECT 
+    'republica mexicana' AS entity,
+    AVG(IF(year = '2015', crime_rate, NULL)) AS crime_2015,
+    MAX(IF(year = '2015', political_party, NULL)) AS party_2015,
+    AVG(IF(year = '2020', crime_rate, NULL)) AS crime_2020,
+    MAX(IF(year = '2020', political_party, NULL)) AS party_2020,
+    AVG(IF(year = '2025', crime_rate, NULL)) AS crime_2025,
+    MAX(IF(year = '2025', political_party, NULL)) AS party_2025
+  FROM 
+    `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
+  WHERE 
+    entity = 'republica mexicana'
+),
+
+-- Step 3: Get crime rates and political parties for each of the top states
+crime_by_year AS (
+  SELECT 
+    entity,
+    AVG(IF(year = '2015', crime_rate, NULL)) AS crime_2015,
+    MAX(IF(year = '2015', political_party, NULL)) AS party_2015,
+    AVG(IF(year = '2020', crime_rate, NULL)) AS crime_2020,
+    MAX(IF(year = '2020', political_party, NULL)) AS party_2020,
+    AVG(IF(year = '2025', crime_rate, NULL)) AS crime_2025,
+    MAX(IF(year = '2025', political_party, NULL)) AS party_2025
+  FROM 
+    `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
+  WHERE 
+    entity != 'republica mexicana'
+  GROUP BY 
+    entity
+)
+
+-- Step 4: Combine top states with their crime and party data
+SELECT 
+  c.entity,
+  c.crime_2015,
+  c.party_2015,
+  c.crime_2020,
+  c.party_2020,
+  c.crime_2025,
+  c.party_2025
+FROM 
+  top_violent_states t
+JOIN 
+  crime_by_year c
+ON 
+  t.entity = c.entity
+
+-- Step 5: Add República Mexicana to the result
+UNION ALL
+
+SELECT 
+  entity,
+  crime_2015,
+  party_2015,
+  crime_2020,
+  party_2020,
+  crime_2025,
+  party_2025
+FROM 
+  republica_mexicana
+
+-- Step 6: Sort the final result by crime rate in 2025 (descending)
+ORDER BY 
+  crime_2025 DESC;
+
+```` 
+## Results
+
+| entity              | crime_2015 | party_2015 | crime_2020 | party_2020 | crime_2025 | party_2025 |
+|---------------------|------------|------------|------------|------------|------------|------------|
+| colima              | 75.8       | PRI        | 269.3      | PRI        | 253.2      | Morena     |
+| republica mexicana  | 177.6      | PRI        | 197.1      | Morena     | 240.3      | Morena     |
+| baja california     | 247.9      | PAN        | 189.0      | Morena     | 239.5      | Morena     |
+| aguascalientes      | 145.2      | PAN        | 195.3      | PAN        | 217.2      | PAN        |
+| ciudad de mexico    | 156.2      | PRD        | 183.1      | Morena     | 196.0      | Morena     |
+| baja california sur | 297.7      | PAN        | 211.3      | PAN        | 193.7      | Morena     |
+
+
+## Findings
+
+The data reveals a consistent increase in crime rates across most entities, particularly in 2025, where Morena is the ruling party in several of the most violent regions. 
+
+Colima and Baja California saw significant crime rate increases after transitioning to Morena leadership. La República Mexicana, under Morena since 2020, also shows a marked rise in national crime rates.
+
+This pattern suggests a possible direct impact of Morena's governance style, which is often characterized by less aggressive policies toward organized crime and narcotrafficking. While this does not establish causation, the correlation raises important questions about the effectiveness of current security strategies and the need for deeper policy evaluation.
+
+
