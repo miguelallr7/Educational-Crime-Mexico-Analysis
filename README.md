@@ -125,7 +125,7 @@ A new table named joined_states_information was created to consolidate data from
 * unemployment_rate
 
 ```sql
-CREATE OR REPLACE TABLE `project-mexico-analysis.unpivoted_dataset_states.clean_entities` AS
+CREATE OR REPLACE TABLE `project-mexico-analysis.joined_datasets_analysis.joined_states_information` AS
 
 WITH
 clean_entities AS (
@@ -169,6 +169,62 @@ LEFT JOIN unemployment un ON ce.entity = un.entity AND cr.year = un.year
 
 ORDER BY ce.entity, cr.year;
 
+
 ```
+## Exploration and extraction of relevant insights
+
+Different queries where performed to extract relevant information and find correlation patterns between the different indicators and years.
+
+## Poorest States vs Unemployment Rate
+
+```sql
+SELECT
+  entity,
+  CONCAT(CAST(ROUND(AVG(poverty_rate), 1) AS STRING), '%') AS avg_poverty_rate_percent,
+  CONCAT(CAST(ROUND(AVG(unemployment_rate), 1) AS STRING), '%') AS avg_unemployment_rate_percent
+FROM
+  `project-mexico-analysis`.`joined_datasets_analysis`.`joined_states_information`
+GROUP BY
+  entity
+ORDER BY
+  avg_poverty_rate_percent DESC;
+```
+## Average Poverty and Unemployment Rates by State
+
+| entity              | avg_poverty_rate_percent | avg_unemployment_rate_percent |
+|---------------------|--------------------------|-------------------------------|
+| chiapas             | 73.4%                    | 2.7%                          |
+| guerrero            | 65%                      | 1.7%                          |
+| oaxaca              | 62.5%                    | 1.8%                          |
+| puebla              | 59.3%                    | 3%                            |
+| tlaxcala            | 55.9%                    | 3.9%                          |
+| veracruz            | 55.2%                    | 2.9%                          |
+| tabasco             | 51.1%                    | 6%                            |
+| zacatecas           | 49.2%                    | 3%                            |
+| hidalgo             | 49.1%                    | 2.5%                          |
+| michoacan           | 48.9%                    | 2.4%                          |
+| campeche            | 46.5%                    | 2.9%                          |
+| morelos             | 45.7%                    | 2.2%                          |
+| estado de mexico    | 44.8%                    | 4.4%                          |
+| yucatan             | 44.2%                    | 2.1%                          |
+| san luis potosi     | 43.3%                    | 2.9%                          |
+| republica mexicana  | 42.2%                    | 3.4%                          |
+| durango             | 40.7%                    | 3.9%                          |
+| guanajuato          | 40.2%                    | 3.9%                          |
+| nayarit             | 35.9%                    | 3.4%                          |
+| quintana roo        | 32.9%                    | 3.6%                          |
+| tamaulipas          | 32.7%                    | 3.8%                          |
+| aguascalientes      | 29.9%                    | 3.7%                          |
+| jalisco             | 29.8%                    | 3%                            |
+| queretaro           | 29.4%                    | 4%                            |
+| sinaloa             | 29.3%                    | 3.1%                          |
+| colima              | 27.8%                    | 3.2%                          |
+| ciudad de mexico    | 27.3%                    | 4.8%                          |
+| chihuahua           | 26.9%                    | 3.1%                          |
+| sonora              | 26.5%                    | 3.9%                          |
+| coahuila            | 24.8%                    | 4.4%                          |
+| baja california     | 22.1%                    | 2.7%                          |
+| baja california sur | 21.6%                    | 3.8%                          |
+| nuevo leon          | 19.5%                    | 3.8%                          |
 
 
