@@ -1,0 +1,364 @@
+entity,year,crime_rate,political_party,poverty_rate,unemployment_rate
+aguascalientes,2015,145.2,PAN,37.7,4.5
+aguascalientes,2016,145.9,PAN,38.2,4
+aguascalientes,2017,203.2,PAN,37.8,3.6
+aguascalientes,2018,231.9,PAN,34.8,3.5
+aguascalientes,2019,226.3,PAN,29,3.5
+aguascalientes,2020,195.3,PAN,26.3,4.6
+aguascalientes,2021,204.4,PAN,27.7,4.1
+aguascalientes,2022,224,PAN,23.8,3.8
+aguascalientes,2023,236.7,PAN,25.1,3.2
+aguascalientes,2024,237.6,PAN,24.3,3.2
+aguascalientes,2025,217.2,PAN,23.7,2.6
+baja california,2015,247.9,PAN,26,4.2
+baja california,2016,278.2,PAN,31.6,2.7
+baja california,2017,267.1,PAN,30.3,2.9
+baja california,2018,253.2,PAN,28.6,2.5
+baja california,2019,239.4,Morena,22.7,2.5
+baja california,2020,189,Morena,23.6,2.6
+baja california,2021,189.6,Morena,22.6,2.5
+baja california,2022,203.9,Morena,13.4,2.4
+baja california,2023,223.2,Morena,15.2,2.2
+baja california,2024,239.8,Morena,14.8,2.5
+baja california,2025,239.5,Morena,14.3,2.6
+baja california sur,2015,297.7,PAN,21.4,4.8
+baja california sur,2016,267.2,PAN,31,4.6
+baja california sur,2017,268.9,PAN,30.2,4.4
+baja california sur,2018,243.8,PAN,30.3,3.8
+baja california sur,2019,242.2,PAN,22.9,4.5
+baja california sur,2020,211.3,PAN,18.6,5.5
+baja california sur,2021,221.5,Morena,27.7,4.1
+baja california sur,2022,244.2,Morena,13.4,2.8
+baja california sur,2023,265.7,Morena,14.5,2.7
+baja california sur,2024,232.5,Morena,13.9,2.3
+baja california sur,2025,193.7,Morena,13.2,2.2
+campeche,2015,17.1,PRI,45.9,2.9
+campeche,2016,20,PRI,50.6,3.7
+campeche,2017,18,PRI,44.7,3.8
+campeche,2018,18.6,PRI,43.6,3.3
+campeche,2019,19.6,PRI,45.7,3.3
+campeche,2020,16.7,PRI,49,3.3
+campeche,2021,46,Morena,50.6,3
+campeche,2022,206,Morena,45.2,2.6
+campeche,2023,205.3,Morena,46.2,1.8
+campeche,2024,97.3,Morena,45.5,1.9
+campeche,2025,46.1,Morena,44.8,2.6
+chiapas,2015,33.9,PVEM,77.1,3.1
+chiapas,2016,34.3,PVEM,78.5,3.1
+chiapas,2017,38.6,PVEM,74.7,2.6
+chiapas,2018,43.3,Morena,76.3,2.8
+chiapas,2019,34.4,Morena,78,3.2
+chiapas,2020,25.1,Morena,78,2.9
+chiapas,2021,24.6,Morena,75.5,3.2
+chiapas,2022,22.6,Morena,67.4,2.4
+chiapas,2023,21.1,Morena,68.5,2.1
+chiapas,2024,18.9,Morena,67.2,2
+chiapas,2025,17.4,Morena,66.1,2.3
+chihuahua,2015,141.2,PRI,32.1,3.7
+chihuahua,2016,132.2,PAN,38.9,3.2
+chihuahua,2017,155.4,PAN,35.3,2.7
+chihuahua,2018,154,PAN,34.4,3.2
+chihuahua,2019,159,PAN,30.8,3
+chihuahua,2020,146.5,PAN,26.7,4
+chihuahua,2021,158.6,PAN,25.4,3.4
+chihuahua,2022,157.6,PAN,17.6,2.4
+chihuahua,2023,157.9,PAN,18.9,2.5
+chihuahua,2024,166.9,PAN,18.3,2.4
+chihuahua,2025,159.1,PAN,17.8,3.7
+ciudad de mexico,2015,156.2,PRD,27.7,5.3
+ciudad de mexico,2016,165.5,PRD,28.6,5
+ciudad de mexico,2017,188,PRD,29,4.6
+ciudad de mexico,2018,222.2,Morena,28.4,4.6
+ciudad de mexico,2019,224.1,Morena,26.6,5
+ciudad de mexico,2020,183.1,Morena,30,6.4
+ciudad de mexico,2021,207.1,Morena,32.7,6.9
+ciudad de mexico,2022,215.7,Morena,24,5.3
+ciudad de mexico,2023,217.9,Morena,25,4
+ciudad de mexico,2024,207.1,Morena,24.4,4
+ciudad de mexico,2025,196,Morena,23.9,2.1
+coahuila,2015,129.3,PRI,32.8,5.1
+coahuila,2016,140.3,PRI,27.9,4.4
+coahuila,2017,152,PRI,28,4.4
+coahuila,2018,149.8,PRI,30.2,4.1
+coahuila,2019,138.9,PRI,27.1,4.6
+coahuila,2020,125.5,PRI,25.6,6.1
+coahuila,2021,143.2,PRI,25.7,4.9
+coahuila,2022,163,PRI,18.3,4.2
+coahuila,2023,148.9,PRI,19.8,3.9
+coahuila,2024,151.7,PRI,19.2,3.9
+coahuila,2025,168.9,PRI,18.7,2.4
+colima,2015,75.8,PRI,27.5,4.7
+colima,2016,150,PRI,34.7,4.1
+colima,2017,272.3,PRI,34.5,3.6
+colima,2018,268.5,PRI,34.4,3.3
+colima,2019,286.3,PRI,32.6,3.6
+colima,2020,269.3,PRI,30.5,3.7
+colima,2021,296.5,Morena,26.7,3.1
+colima,2022,295.8,Morena,20.6,2.6
+colima,2023,285.1,Morena,21.9,2.3
+colima,2024,253.6,Morena,21.3,2.2
+colima,2025,253.2,Morena,20.7,2.2
+durango,2015,136.1,PRI,48.5,4.9
+durango,2016,148.8,PRI,51.6,4.5
+durango,2017,159.6,PRI,50.1,3.8
+durango,2018,144.8,PRI,43.5,4.3
+durango,2019,136.4,PRI,37.2,4
+durango,2020,116,PRI,38.8,4.6
+durango,2021,130.3,PRI,38.7,4.1
+durango,2022,115.9,PAN,34.4,3.3
+durango,2023,96.6,PAN,35.5,2.9
+durango,2024,85.8,PAN,34.8,3.1
+durango,2025,81.4,PAN,34.2,3.7
+estado de mexico,2015,99.8,PRI,43.6,5.4
+estado de mexico,2016,141.5,PRI,42.9,5.1
+estado de mexico,2017,170.4,PRI,45.4,4
+estado de mexico,2018,164.6,PRI,49.7,4
+estado de mexico,2019,156.8,PRI,46.7,4.5
+estado de mexico,2020,125.5,PRI,41.8,6.1
+estado de mexico,2021,126.2,PRI,48.9,5.8
+estado de mexico,2022,124.9,PRI,42.9,4.7
+estado de mexico,2023,126.9,Morena,44.1,3.6
+estado de mexico,2024,118.6,Morena,43.5,3.5
+estado de mexico,2025,110.4,Morena,42.9,2.2
+guanajuato,2015,164,PAN,44.1,4.7
+guanajuato,2016,162.7,PAN,48.6,4
+guanajuato,2017,170.9,PAN,44.5,3.6
+guanajuato,2018,166.7,PAN,46.6,3.6
+guanajuato,2019,171.4,PAN,39.4,3.7
+guanajuato,2020,163.2,PAN,41.5,5.2
+guanajuato,2021,184.4,PAN,42.8,5.2
+guanajuato,2022,186.4,PAN,33.1,3.4
+guanajuato,2023,179.3,PAN,34.6,3.1
+guanajuato,2024,169.5,PAN,33.9,2.9
+guanajuato,2025,164.2,PAN,33.3,3.1
+guerrero,2015,134.6,PRI,68.5,2.1
+guerrero,2016,147.7,PRI,67.6,2
+guerrero,2017,162.1,PRI,69.7,1.6
+guerrero,2018,182.2,PRI,65.3,1.2
+guerrero,2019,185.8,PRI,66.9,1.5
+guerrero,2020,164.4,PRI,67.9,2.4
+guerrero,2021,178.6,Morena,66.5,1.6
+guerrero,2022,186,Morena,60.4,1.4
+guerrero,2023,192.4,Morena,61.5,1.2
+guerrero,2024,199.8,Morena,60.8,1.2
+guerrero,2025,216.9,Morena,60.1,2.5
+hidalgo,2015,85.8,PRI,55.2,3.8
+hidalgo,2016,84.8,PRI,54.7,3.1
+hidalgo,2017,75.6,PRI,52.8,2.9
+hidalgo,2018,63.6,PRI,54.4,2.5
+hidalgo,2019,62.5,PRI,57,2.4
+hidalgo,2020,54.4,PRI,49.9,2.5
+hidalgo,2021,55.9,PRI,50.8,3
+hidalgo,2022,61.4,Morena,41,2.3
+hidalgo,2023,61.4,Morena,42.3,2.4
+hidalgo,2024,57.8,Morena,41.6,2.1
+hidalgo,2025,57.8,Morena,40.9,0.9
+jalisco,2015,79.1,PRI,36.7,4.7
+jalisco,2016,95.7,PRI,37.1,3.6
+jalisco,2017,123.1,PRI,39.8,2.8
+jalisco,2018,141.6,MC,35.4,2.7
+jalisco,2019,135.9,MC,30.5,2.9
+jalisco,2020,111.4,MC,27.9,4
+jalisco,2021,124,MC,31.5,3.4
+jalisco,2022,138.9,MC,21.9,2.5
+jalisco,2023,149.5,MC,23,2.4
+jalisco,2024,141,MC,22.4,2.1
+jalisco,2025,145.2,MC,21.9,1.9
+michoacan,2015,55.5,PRI,55.5,3.2
+michoacan,2016,57.9,PRI,54.8,2.8
+michoacan,2017,73.8,PRI,54.4,2.6
+michoacan,2018,79.2,PRI,59.3,2.2
+michoacan,2019,81.3,PRI,54.2,2.7
+michoacan,2020,79.2,PRI,46.3,2.4
+michoacan,2021,80.5,Morena,44.6,2.3
+michoacan,2022,77.3,Morena,41.8,1.7
+michoacan,2023,81.1,Morena,43,1.9
+michoacan,2024,81.2,Morena,42.4,1.8
+michoacan,2025,79.5,Morena,41.8,2.8
+morelos,2015,212.6,PRD,48.9,3.3
+morelos,2016,193.8,PRD,43.3,2.6
+morelos,2017,186.8,PRD,45.5,2.1
+morelos,2018,187.2,Morena,52.3,2.1
+morelos,2019,178,Morena,46.7,2.3
+morelos,2020,165.1,Morena,48.6,2.4
+morelos,2021,170.7,Morena,51,2.4
+morelos,2022,177,Morena,41.1,2.3
+morelos,2023,184.9,Morena,42.3,1.9
+morelos,2024,180.9,Morena,41.7,1.8
+morelos,2025,177.7,Morena,41.1,1.4
+nayarit,2015,113.9,PRI,41.8,5.4
+nayarit,2016,119.8,PRI,41.4,4
+nayarit,2017,130.3,PRI,47.7,3.6
+nayarit,2018,132.3,PRI,40.6,3.9
+nayarit,2019,136.4,PRI,38.2,3.9
+nayarit,2020,120.1,PRI,35.8,4.3
+nayarit,2021,132.1,Morena,30.5,2.9
+nayarit,2022,137.2,Morena,29.4,2.6
+nayarit,2023,138,Morena,30.5,2.1
+nayarit,2024,131.7,Morena,29.9,2.2
+nayarit,2025,127.1,Morena,29.3,2.5
+nuevo leon,2015,46.4,Independiente,21.4,4.6
+nuevo leon,2016,25.2,Independiente,21.1,4.3
+nuevo leon,2017,21.8,Independiente,23.3,3.8
+nuevo leon,2018,30.3,Independiente,20.4,3.6
+nuevo leon,2019,30.4,Independiente,18.9,3.6
+nuevo leon,2020,26.9,Independiente,19.4,4.4
+nuevo leon,2021,32.4,MC,24.4,4.5
+nuevo leon,2022,57.6,MC,16.1,3.9
+nuevo leon,2023,76.9,MC,17.2,3.1
+nuevo leon,2024,75.3,MC,16.6,2.9
+nuevo leon,2025,63.8,MC,16,2.8
+oaxaca,2015,115.8,PRI,61.9,2.9
+oaxaca,2016,133.4,PRI,67,2
+oaxaca,2017,130.2,PRI,62,2.2
+oaxaca,2018,123.9,PRI,66.8,1.6
+oaxaca,2019,114.3,PRI,68,1.8
+oaxaca,2020,117.3,PRI,64.4,2.2
+oaxaca,2021,138.2,PRI,61.7,1.6
+oaxaca,2022,153,Morena,58.5,1.4
+oaxaca,2023,138.6,Morena,59.6,1.5
+oaxaca,2024,127.3,Morena,58.9,1.4
+oaxaca,2025,105.5,Morena,58.3,1.4
+puebla,2015,12.7,PAN,64.6,3.2
+puebla,2016,65.1,PAN,61.5,2.9
+puebla,2017,65.4,PAN,64.5,2.7
+puebla,2018,85.4,Morena,64.6,2.5
+puebla,2019,88.6,Morena,58.2,2.6
+puebla,2020,78.6,Morena,58.1,4.5
+puebla,2021,83.2,Morena,62.5,3.9
+puebla,2022,86.3,Morena,54.1,2.9
+puebla,2023,83.6,Morena,55.2,2.4
+puebla,2024,73.7,Morena,54.6,2.2
+puebla,2025,59.5,Morena,54,2.7
+queretaro,2015,85.5,PAN,35.3,4.7
+queretaro,2016,67.1,PAN,41.5,4.4
+queretaro,2017,69.9,PAN,37,4.3
+queretaro,2018,78.7,PAN,34.2,3.8
+queretaro,2019,97.5,PAN,29.7,4.3
+queretaro,2020,80.2,PAN,26.4,6.2
+queretaro,2021,94,PAN,31.4,5.5
+queretaro,2022,95.6,PAN,21.7,3.8
+queretaro,2023,94.9,PAN,22.8,2.9
+queretaro,2024,97.5,PAN,22.2,2.5
+queretaro,2025,100.3,PAN,21.6,2
+quintana roo,2015,132.1,PRI,33.7,4
+quintana roo,2016,169.1,PAN,34.7,3.3
+quintana roo,2017,206.3,PAN,38.8,3.2
+quintana roo,2018,219.2,PAN,35.9,2.7
+quintana roo,2019,225.2,PAN,31.7,3.1
+quintana roo,2020,190.2,PAN,30.2,7.2
+quintana roo,2021,193.8,PAN,47.5,5.9
+quintana roo,2022,207.3,Morena,27,2.7
+quintana roo,2023,220.2,Morena,28.1,2.6
+quintana roo,2024,203.2,Morena,27.5,2.5
+quintana roo,2025,193.3,Morena,26.9,2.6
+republica mexicana,2015,177.6,PRI,44.4,4.3
+republica mexicana,2016,101,PRI,46.2,3.9
+republica mexicana,2017,137.7,PRI,45.5,3.4
+republica mexicana,2018,172.4,PRI,46.2,3.3
+republica mexicana,2019,227.1,Morena,43.3,3.5
+republica mexicana,2020,197.1,Morena,42,4.4
+republica mexicana,2021,225.9,Morena,44,4.1
+republica mexicana,2022,237.6,Morena,36.4,3.3
+republica mexicana,2023,246.6,Morena,40,2.8
+republica mexicana,2024,238.7,Morena,38.5,2.7
+republica mexicana,2025,240.3,Morena,37.2,1.4
+san luis potosi,2015,64.7,PRI,51,3
+san luis potosi,2016,85.7,PRI,52.5,2.5
+san luis potosi,2017,104.6,PRI,50.6,2.4
+san luis potosi,2018,113.2,PRI,49.2,2.5
+san luis potosi,2019,153.1,PRI,44.2,2.7
+san luis potosi,2020,133.2,PRI,42.1,3.1
+san luis potosi,2021,147.5,PVEM,42.9,3.4
+san luis potosi,2022,160.4,PVEM,35.6,3.1
+san luis potosi,2023,173.2,PVEM,36.7,2.7
+san luis potosi,2024,166.5,PVEM,36.1,2.9
+san luis potosi,2025,172.6,PVEM,35.5,3.5
+sinaloa,2015,71.3,PRI,32.4,4.3
+sinaloa,2016,60.5,PRI,36.7,3.8
+sinaloa,2017,62.1,PRI,36.3,3.7
+sinaloa,2018,63,PRI,39.4,3.2
+sinaloa,2019,62.4,PRI,30.5,3.2
+sinaloa,2020,63.1,PRI,31,3.5
+sinaloa,2021,71.7,Morena,28.1,2.7
+sinaloa,2022,78.8,Morena,21.7,2.9
+sinaloa,2023,86.8,Morena,22.8,2.4
+sinaloa,2024,88.4,Morena,22.2,2.3
+sinaloa,2025,100.5,Morena,21.6,2.5
+sonora,2015,82.8,PRI,27.2,4.9
+sonora,2016,112.4,PRI,33.2,5
+sonora,2017,73.1,PRI,29.2,3.8
+sonora,2018,50.5,PRI,29.4,3.7
+sonora,2019,64.3,PRI,27.1,4.3
+sonora,2020,84.3,PRI,26.7,5.3
+sonora,2021,99.9,Morena,30,3.8
+sonora,2022,88.7,Morena,21.7,3.1
+sonora,2023,94.6,Morena,22.9,2.8
+sonora,2024,94.2,Morena,22.3,3.2
+sonora,2025,85.1,Morena,21.7,2.5
+tabasco,2015,197.3,PRD,53.9,6.7
+tabasco,2016,201.6,PRD,57.1,7.5
+tabasco,2017,202.4,PRD,49.7,7
+tabasco,2018,193,Morena,49.6,7.2
+tabasco,2019,185.3,Morena,53.9,7.1
+tabasco,2020,145.8,Morena,56.4,6.9
+tabasco,2021,156.2,Morena,54.5,5.8
+tabasco,2022,144.2,Morena,46.5,5
+tabasco,2023,138.2,Morena,47.6,3.9
+tabasco,2024,138.6,Morena,47,4
+tabasco,2025,142.1,Morena,46.4,4.7
+tamaulipas,2015,106.2,PAN,33.9,4.8
+tamaulipas,2016,114.7,PAN,39,4.7
+tamaulipas,2017,110.4,PAN,38.4,4.2
+tamaulipas,2018,102.3,PAN,38,3.9
+tamaulipas,2019,97.7,PAN,32.1,3.5
+tamaulipas,2020,72.7,PAN,34.6,3.4
+tamaulipas,2021,83,PAN,35,3.5
+tamaulipas,2022,84.6,Morena,26.9,3.5
+tamaulipas,2023,92.9,Morena,28,3.1
+tamaulipas,2024,89,Morena,27.4,3.2
+tamaulipas,2025,89.2,Morena,26.8,3.5
+tlaxcala,2015,53.5,PRI,59.6,4.9
+tlaxcala,2016,43,PRI,60.4,4.1
+tlaxcala,2017,43.6,PRI,57.9,3.7
+tlaxcala,2018,39.4,PRI,59,3.7
+tlaxcala,2019,27,PRI,56,3.7
+tlaxcala,2020,25,PRI,51,5.3
+tlaxcala,2021,27,Morena,59.3,5.2
+tlaxcala,2022,26.1,Morena,52.6,3.8
+tlaxcala,2023,22.7,Morena,53.7,3.3
+tlaxcala,2024,19.8,Morena,53.1,2.9
+tlaxcala,2025,15.2,Morena,52.5,2.4
+veracruz,2015,46.1,PRI,51.2,3.7
+veracruz,2016,42.5,PAN,57.6,3.5
+veracruz,2017,66.1,PAN,52.7,3.5
+veracruz,2018,60.1,Morena,58.1,3
+veracruz,2019,88.2,Morena,60.5,3
+veracruz,2020,77.4,Morena,60.2,2.9
+veracruz,2021,85.7,Morena,58.7,3.4
+veracruz,2022,83.2,Morena,51.8,2.7
+veracruz,2023,83.1,Morena,52.9,2.1
+veracruz,2024,77.6,Morena,52.3,2.1
+veracruz,2025,72.6,Morena,51.7,2.1
+yucatan,2015,135.9,PRI,47.1,2.6
+yucatan,2016,132.5,PRI,48.4,2
+yucatan,2017,93.1,PRI,48.9,2.1
+yucatan,2018,49.5,PAN,45.9,1.8
+yucatan,2019,61.3,PAN,45.6,1.9
+yucatan,2020,31,PAN,44.1,2.7
+yucatan,2021,31.3,PAN,49.5,2.5
+yucatan,2022,15.2,PAN,38.8,2
+yucatan,2023,15.3,PAN,39.9,1.8
+yucatan,2024,14.7,Morena,39.3,1.8
+yucatan,2025,17,Morena,38.7,1.7
+zacatecas,2015,84.2,PRI,50.2,3.6
+zacatecas,2016,88.4,PRI,60.3,2.9
+zacatecas,2017,96.5,PRI,54.3,2.8
+zacatecas,2018,106.9,PRI,52.4,2.9
+zacatecas,2019,120.7,PRI,50.2,3.1
+zacatecas,2020,113.7,PRI,49.3,3.8
+zacatecas,2021,124.7,Morena,45.8,3.5
+zacatecas,2022,126,Morena,44.3,2.8
+zacatecas,2023,130.6,Morena,45.4,2.9
+zacatecas,2024,125.3,Morena,44.8,2.7
+zacatecas,2025,115.8,Morena,44.2,2.4
