@@ -175,56 +175,73 @@ ORDER BY ce.entity, cr.year;
 
 Different queries where performed to extract relevant information and find correlation patterns between the different indicators and years.
 
-## Poorest States vs Unemployment Rate
+## Most Violent State vs Poorest State vs Unemployment Rate from 2015 to 2025
 
 ```sql
 SELECT
   entity,
+  ROUND(AVG(crime_rate), 1) AS avg_crime_rate_per_100k,
   CONCAT(CAST(ROUND(AVG(poverty_rate), 1) AS STRING), '%') AS avg_poverty_rate_percent,
   CONCAT(CAST(ROUND(AVG(unemployment_rate), 1) AS STRING), '%') AS avg_unemployment_rate_percent
 FROM
-  `project-mexico-analysis`.`joined_datasets_analysis`.`joined_states_information`
+  `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
 GROUP BY
   entity
 ORDER BY
-  avg_poverty_rate_percent DESC;
+  avg_crime_rate_per_100k DESC;
 ```
-## Average Poverty and Unemployment Rates by State
+## Averages by States
 
-| entity              | avg_poverty_rate_percent | avg_unemployment_rate_percent |
-|---------------------|--------------------------|-------------------------------|
-| chiapas             | 73.4%                    | 2.7%                          |
-| guerrero            | 65%                      | 1.7%                          |
-| oaxaca              | 62.5%                    | 1.8%                          |
-| puebla              | 59.3%                    | 3%                            |
-| tlaxcala            | 55.9%                    | 3.9%                          |
-| veracruz            | 55.2%                    | 2.9%                          |
-| tabasco             | 51.1%                    | 6%                            |
-| zacatecas           | 49.2%                    | 3%                            |
-| hidalgo             | 49.1%                    | 2.5%                          |
-| michoacan           | 48.9%                    | 2.4%                          |
-| campeche            | 46.5%                    | 2.9%                          |
-| morelos             | 45.7%                    | 2.2%                          |
-| estado de mexico    | 44.8%                    | 4.4%                          |
-| yucatan             | 44.2%                    | 2.1%                          |
-| san luis potosi     | 43.3%                    | 2.9%                          |
-| republica mexicana  | 42.2%                    | 3.4%                          |
-| durango             | 40.7%                    | 3.9%                          |
-| guanajuato          | 40.2%                    | 3.9%                          |
-| nayarit             | 35.9%                    | 3.4%                          |
-| quintana roo        | 32.9%                    | 3.6%                          |
-| tamaulipas          | 32.7%                    | 3.8%                          |
-| aguascalientes      | 29.9%                    | 3.7%                          |
-| jalisco             | 29.8%                    | 3%                            |
-| queretaro           | 29.4%                    | 4%                            |
-| sinaloa             | 29.3%                    | 3.1%                          |
-| colima              | 27.8%                    | 3.2%                          |
-| ciudad de mexico    | 27.3%                    | 4.8%                          |
-| chihuahua           | 26.9%                    | 3.1%                          |
-| sonora              | 26.5%                    | 3.9%                          |
-| coahuila            | 24.8%                    | 4.4%                          |
-| baja california     | 22.1%                    | 2.7%                          |
-| baja california sur | 21.6%                    | 3.8%                          |
-| nuevo leon          | 19.5%                    | 3.8%                          |
+| entity              | avg_crime_rate_per_100k | avg_poverty_rate_percent | avg_unemployment_rate_percent |
+|---------------------|-------------------------|--------------------------|-------------------------------|
+| colima              | 246.0                   | 27.8%                    | 3.2%                          |
+| baja california sur | 244.4                   | 21.6%                    | 3.8%                          |
+| baja california     | 233.7                   | 22.1%                    | 2.7%                          |
+| aguascalientes      | 206.2                   | 29.9%                    | 3.7%                          |
+| republica mexicana  | 200.2                   | 42.2%                    | 3.4%                          |
+| ciudad de mexico    | 198.4                   | 27.3%                    | 4.8%                          |
+| quintana roo        | 196.4                   | 32.9%                    | 3.6%                          |
+| morelos             | 183.2                   | 45.7%                    | 2.2%                          |
+| guerrero            | 177.3                   | 65%                      | 1.7%                          |
+| guanajuato          | 171.2                   | 40.2%                    | 3.9%                          |
+| tabasco             | 167.7                   | 51.1%                    | 6%                            |
+| chihuahua           | 153.5                   | 26.9%                    | 3.1%                          |
+| coahuila            | 146.5                   | 24.8%                    | 4.4%                          |
+| san luis potosi     | 134.1                   | 43.3%                    | 2.9%                          |
+| estado de mexico    | 133.2                   | 44.8%                    | 4.4%                          |
+| nayarit             | 129.0                   | 35.9%                    | 3.4%                          |
+| oaxaca              | 127.0                   | 62.5%                    | 1.8%                          |
+| jalisco             | 125.9                   | 29.8%                    | 3%                            |
+| durango             | 122.9                   | 40.7%                    | 3.9%                          |
+| zacatecas           | 112.1                   | 49.2%                    | 3%                            |
+| tamaulipas          | 94.8                    | 32.7%                    | 3.8%                          |
+| queretaro           | 87.4                    | 29.4%                    | 4%                            |
+| sonora              | 84.5                    | 26.5%                    | 3.9%                          |
+| michoacan           | 75.1                    | 48.9%                    | 2.4%                          |
+| sinaloa             | 73.5                    | 29.3%                    | 3.1%                          |
+| puebla              | 71.1                    | 59.3%                    | 3%                            |
+| veracruz            | 71.1                    | 55.2%                    | 2.9%                          |
+| hidalgo             | 65.5                    | 49.1%                    | 2.5%                          |
+| campeche            | 64.6                    | 46.5%                    | 2.9%                          |
+| yucatan             | 54.3                    | 44.2%                    | 2.1%                          |
+| nuevo leon          | 44.3                    | 19.5%                    | 3.8%                          |
+| tlaxcala            | 31.1                    | 55.9%                    | 3.9%                          |
+| chiapas             | 28.6                    | 73.4%                    | 2.7%                          |
+
+## Correlation Between Poverty Rate vs Crime Avg
+### Process to find correlation
+
+```sql
+SELECT
+  CORR(poverty_rate, crime_rate) AS poverty_crime_correlation
+FROM
+  `project-mexico-analysis.joined_datasets_analysis.joined_states_information`;
+```
+### Result
+
+| poverty_crime_correlation |
+|---------------------------|
+| -0.36467106377769876      |
 
 
+Based on the analysis of state-level data in Mexico, we found a moderate negative correlation between poverty rate and crime rate (–0.36). This suggests that, contrary to common assumptions, states with higher poverty levels tend to report slightly lower crime rates. Possible explanations include underreporting in marginalized areas, rural vs. urban dynamics, and the influence of political or institutional factors. Further investigation is recommended to explore these patterns in more detail
