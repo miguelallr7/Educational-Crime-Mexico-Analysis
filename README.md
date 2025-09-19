@@ -354,6 +354,105 @@ The data reveals a consistent increase in crime rates across most entities, part
 
 Colima and Baja California saw significant crime rate increases after transitioning to Morena leadership. La República Mexicana, under Morena since 2020, also shows a marked rise in national crime rates.
 
-This pattern suggests a possible direct impact of Morena's governance style, which is often characterized by less aggressive policies toward organized crime and narcotrafficking. While this does not establish causation, the correlation raises important questions about the effectiveness of current security strategies and the need for deeper policy evaluation.
+## Least Violent States in 2025, Correlation With Political Party
 
+A comparative analysis was conducted on the five least violent states in Mexico, along with the national average (República Mexicana), focusing on crime rates in 2015, 2020, and 2025. Each state's ruling political party during those years was also examined to explore potential correlations between governing policies and crime trends.
+
+```sql
+-- Step 1: Get the 5 states with the lowest average crime rate
+WITH least_violent_states AS (
+  SELECT 
+    entity,
+    AVG(crime_rate) AS avg_crime_rate
+  FROM 
+    `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
+  WHERE 
+    entity != 'republica mexicana'  -- Exclude national aggregate
+  GROUP BY 
+    entity
+  ORDER BY 
+    avg_crime_rate ASC
+  LIMIT 5
+),
+
+-- Step 2: Get crime rates and political parties for each of those states
+crime_by_year AS (
+  SELECT 
+    entity,
+    AVG(IF(year = '2015', crime_rate, NULL)) AS crime_2015,
+    MAX(IF(year = '2015', political_party, NULL)) AS party_2015,
+    AVG(IF(year = '2020', crime_rate, NULL)) AS crime_2020,
+    MAX(IF(year = '2020', political_party, NULL)) AS party_2020,
+    AVG(IF(year = '2025', crime_rate, NULL)) AS crime_2025,
+    MAX(IF(year = '2025', political_party, NULL)) AS party_2025
+  FROM 
+    `project-mexico-analysis.joined_datasets_analysis.joined_states_information`
+  WHERE 
+    entity != 'republica mexicana'
+  GROUP BY 
+    entity
+)
+
+-- Step 3: Join the two datasets and order by crime rate in 2025
+SELECT 
+  c.entity,
+  c.crime_2015,
+  c.party_2015,
+  c.crime_2020,
+  c.party_2020,
+  c.crime_2025,
+  c.party_2025
+FROM 
+  least_violent_states l
+JOIN 
+  crime_by_year c
+ON 
+  l.entity = c.entity
+ORDER BY 
+  c.crime_2025 ASC;
+```
+## Results
+
+| entity     | crime_2015 | party_2015    | crime_2020 | party_2020    | crime_2025 | party_2025 |
+|------------|------------|---------------|------------|---------------|------------|------------|
+| tlaxcala   | 53.5       | PRI           | 25.0       | PRI           | 15.2       | Morena     |
+| yucatan    | 135.9      | PRI           | 31.0       | PAN           | 17.0       | Morena     |
+| chiapas    | 33.9       | PVEM          | 25.1       | Morena        | 17.4       | Morena     |
+| campeche   | 17.1       | PRI           | 16.7       | PRI           | 46.1       | Morena     |
+| nuevo leon | 46.4       | Independiente | 26.9       | Independiente | 63.8       | MC         |
+
+## Findings
+
+An analysis of the five states with the lowest crime rates in 2025 reveals interesting patterns in relation to political party leadership:
+
+Tlaxcala, Yucatán, and Chiapas all show a consistent decline in crime rates from 2015 to 2025. Each of these states transitioned to Morena leadership by 2025, suggesting a potential link between local governance and improved security outcomes.
+Campeche, however, experienced a sharp increase in crime rate in 2025 despite also shifting to Morena, indicating that party affiliation alone may not fully explain crime trends.
+
+Nuevo León presents a unique case: under Independent leadership, crime rates were relatively low, but rose significantly after transitioning to Movimiento Ciudadano (MC) in 2025.
+
+## Correlation Between Parties and Crimes
+
+### Most Violent States
+
+The most violent states in 2025 include Colima, Baja California, Ciudad de México, Aguascalientes, and Baja California Sur, along with the national average (República Mexicana). These states show a notable increase in crime rates over the decade, particularly under Morena leadership in 2025.
+
+- Colima: Crime rose from 75.8 (2015) to 253.2 (2025), with a shift from PRI to Morena.
+- República Mexicana: National crime increased from 177.6 to 240.3 under Morena.
+- Baja California: Transitioned from PAN to Morena, with crime rising again in 2025.
+- Ciudad de México and Aguascalientes also saw increases, despite different party trajectories.
+
+These trends suggest a possible direct impact of Morena’s governance, which is often associated with less aggressive policies toward organized crime and narcotrafficking. While not conclusive, the correlation raises concerns about the effectiveness of current security strategies.
+
+### Least Violent States
+
+The least violent states in 2025 include Tlaxcala, Yucatán, Chiapas, Campeche, and Nuevo León. Most of these states show declining crime rates, especially those that transitioned to Morena leadership.
+
+- Tlaxcala, Yucatán, and Chiapas saw consistent drops in crime after shifting to Morena.
+- Campeche and Nuevo León, however, experienced crime rate increases, despite different political paths (Morena and Movimiento Ciudadano, respectively).
+
+This mixed outcome indicates that party affiliation alone is not a definitive predictor of crime trends. Local governance, historical context, and specific policy implementations play a significant role.
+
+### Key Takeaway
+
+There is a visible increase in crime in several Morena-governed states, especially among the most violent ones. While some least violent states under Morena show improvement, the overall trend raises questions about the effectiveness of current crime and security policies. A more granular, policy-level analysis is needed to understand the true drivers behind these shifts.
 
