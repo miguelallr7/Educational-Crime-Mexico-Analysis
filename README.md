@@ -125,6 +125,8 @@ A new table named joined_states_information was created to consolidate data from
 * unemployment_rate
 
 ```sql
+CREATE OR REPLACE TABLE `project-mexico-analysis.unpivoted_dataset_states.clean_entities` AS
+
 WITH
 clean_entities AS (
   SELECT DISTINCT TRIM(LOWER(entity)) AS entity
