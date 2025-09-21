@@ -452,7 +452,31 @@ The least violent states in 2025 include Tlaxcala, Yucatán, Chiapas, Campeche, 
 
 This mixed outcome indicates that party affiliation alone is not a definitive predictor of crime trends. Local governance, historical context, and specific policy implementations play a significant role.
 
-### Key Takeaway
+### Political Influence Analysis
 
-There is a visible increase in crime in several Morena-governed states, especially among the most violent ones. While some least violent states under Morena show improvement, the overall trend raises questions about the effectiveness of current crime and security policies. A more granular, policy-level analysis is needed to understand the true drivers behind these shifts.
 
+
+```r
+
+This boxplot shows the distribution of crime rates across regions governed by different political parties in Mexico.
+
+![Crime Rate by Political Party](data/scripts/visualizations/tableau/crime_rate_by_party.png)
+
+The plot was generated using this R script:
+aggregate(cbind(crime_rate, poverty_rate, unemployment_rate) ~ political_party,
+          data = joined_states_information, mean)
+
+ggplot(joined_states_information, aes(x = political_party, y = crime_rate, fill = political_party)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(title = "Crime Rate by Political Party")
+
+```
+
+### Graph Observations
+
+
+* Independiente shows very low crime rates and little variation.
+* Morena, PAN and PRD have higher median crime rates and larger spread.
+* PVEM also shows a broad distribution.
+* MC and PRI are somewhere in the middle.
