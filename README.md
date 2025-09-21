@@ -496,3 +496,30 @@ This project includes a Tableau graph showing how crime has changed over time.
 While the overall national trend shows fluctuations, including a notable peak around 2018-2019 followed by a slight decrease or stabilization towards 2025, the individual state trends vary significantly. Some states experience persistently high crime rates (e.g., Colima, Guanajuato, Baja California), while others maintain relatively lower levels (e.g., Yucatán, Tlaxcala). Additionally, other states like Zacatecas show notable improvement, while others, such as Tabasco, experienced a deterioration in peace during this period, highlighting the varied impact of crime and security strategies at a sub-national level
 
 
+## Crime Rate by State in Mexico (2015 vs 2020 vs 2025) 
+### Crimes Rates per 100,000.00 Inhabitants
+
+* 2015: Crime rates were relatively lower overall, though states like Baja California and Guerrero already stood out with higher levels. Central and southern states showed mostly moderate-to-low crime rates.
+* 2020: A noticeable shift with higher crime rates across several regions, particularly in Baja California, Guanajuato, and Quintana Roo. The map indicates a wider spread of mid-to-high values compared to 2015.
+* 2025: Crime rates are more heterogeneous. Northern states (e.g., Baja California, Sonora) and central states (e.g., Michoacán, Guanajuato) show persistent high levels, while some southern states remain relatively low. This suggests both persistence of hotspots and growing divergence across regions.
+
+## Crime Rate Map (2015, 2020, 2025)
+
+Here we compare crime rate evolution across Mexican states.
+
+- **2015:** Concentrated high crime in Baja California and Guerrero.  
+- **2020:** Expansion of hotspots including Guanajuato and Quintana Roo.  
+- **2025:** Persistent high crime in Baja California, Sonora, Michoacán, Guanajua
+
+![Crime 2015](data/scripts/visualizations/tableau/Crime%20Rate%20by%20State%202015.png)
+![Crime 2020](data/scripts/visualizations/tableau/Crime%20Rate%20by%20State%202020.png)
+![Crime 2025](data/scripts/visualizations/tableau/Crime%20Rate%20by%20State%202025.png)
+
+
+## Project Conclusion
+
+This project shows that crime rates in Mexico have **risen steadily from 2015 to 2025**, with notable surges in states such as Colima, Baja California, and Guanajuato. While socioeconomic indicators like poverty and unemployment provide partial explanations, the **political dimension** also emerges as relevant.  
+
+By 2025, **Morena governs several of the most violent states**, and the national average crime rate also climbed under its administration. Some states, however, such as Tlaxcala, Yucatán, and Chiapas, demonstrate that local governance under Morena coincided with declining crime. This contrast suggests that **party affiliation alone does not determine crime outcomes** rather, the effectiveness of state-level policies and institutional capacity matters most.  
+
+Overall, the findings indicate that Mexico faces **persistent and geographically uneven crime challenges**, where politics, education, and socioeconomic factors all intersect. Addressing crime will require a mix of **evidence-based public security strategies, stronger governance, and long-term investment in education and social development**.
