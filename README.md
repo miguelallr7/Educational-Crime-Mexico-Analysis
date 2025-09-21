@@ -454,8 +454,6 @@ This mixed outcome indicates that party affiliation alone is not a definitive pr
 
 ### Political Influence Analysis
 
-
-
 ```r
 
 This boxplot shows the distribution of crime rates across regions governed by different political parties in Mexico.
@@ -475,8 +473,26 @@ ggplot(joined_states_information, aes(x = political_party, y = crime_rate, fill 
 
 ### Graph Observations
 
-
 * Independiente shows very low crime rates and little variation.
 * Morena, PAN and PRD have higher median crime rates and larger spread.
 * PVEM also shows a broad distribution.
 * MC and PRI are somewhere in the middle.
+
+
+## Crime Over Time Variation
+
+This project includes a Tableau graph showing how crime has changed over time.
+
+### How it was created
+1. Data was loaded into Tableau Desktop.
+2. A time-series line chart was built with crime incidents per year.
+3. The visualization was exported and embedded into this project.
+
+### Graph
+  ![Crime Over Time](data/scripts/visualizations/tableau/Crime%20Variation%20Over%20TIme.png)
+
+## Key Notes
+
+While the overall national trend shows fluctuations, including a notable peak around 2018-2019 followed by a slight decrease or stabilization towards 2025, the individual state trends vary significantly. Some states experience persistently high crime rates (e.g., Colima, Guanajuato, Baja California), while others maintain relatively lower levels (e.g., Yucatán, Tlaxcala). Additionally, other states like Zacatecas show notable improvement, while others, such as Tabasco, experienced a deterioration in peace during this period, highlighting the varied impact of crime and security strategies at a sub-national level
+
+
